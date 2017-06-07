@@ -2,14 +2,9 @@ package com.tolet.interfacejava;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.RelativeLayout;
 import android.widget.Button;
-import android.graphics.Color;
-import android.widget.EditText;
-import android.content.res.Resources;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +12,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button newButton1 = (Button)findViewById(R.id.diptosButton1);
+        newButton1.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        TextView myText = (TextView)findViewById(R.id.diptosText);
+                        myText.setText("Button 1 Clicked");
+                    }
+                }
+        );
+
+        Button newButton2 = (Button)findViewById(R.id.diptosButton2);
+        newButton2.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        TextView myText = (TextView)findViewById(R.id.diptosText);
+                        myText.setText("Button 2 Clicked");
+                    }
+                }
+        );
+    }
+}
+
+
+
+
+
+
+
+
+
 //        RelativeLayout diptosLayout = new RelativeLayout(this);
 //        diptosLayout.setBackgroundColor(Color.GREEN);
 //
@@ -60,5 +86,3 @@ public class MainActivity extends AppCompatActivity {
 //        diptosLayout.addView(redButton , buttonDetails);
 //        diptosLayout.addView(username , usernameDetails);
 //        setContentView(diptosLayout);
-    }
-}
